@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!--  생성자 이용 값  -->
+	<bean id="myProcess" class="com.ict.edu03.MyProcess">
+		<constructor-arg name="name" value="태권브이"></constructor-arg>
+		<constructor-arg name="age" value="47"></constructor-arg>
+	</bean>
+
+	<bean id="myProcess2" class="com.ict.edu03.MyProcess">
+		<property name="name" value="아수라백작"></property>
+		<property name="age" value="1024"></property>
+	</bean>
+	
+</beans>

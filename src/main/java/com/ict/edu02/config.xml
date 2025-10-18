@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 객체 생성 -->
+	<!-- MySQLDAO my = new MySQLDAO() -->
+	
+	<!-- <bean id="내부나 외부에서 호출하는 이름" class="패키지.클래스이름"/> -->
+	<!--          일바나적으로 클래스이름 첫글자 소문자  -->
+	<bean id="mySQLDAO" class="com.ict.edu02.MySQLDAO"/>
+	<bean id="oracleDAO" class="com.ict.edu02.OracleDAO"/>
+	
+	<!-- 의존성 주입 -->
+	<!-- myService를 만들어서 생성자를 이용해서 orcle, mysql 넣자 -->
+<!-- 생성자를 이용한 의존서 주입 	
+	<bean id="myService" class="com.ict.edu02.MyService">
+		 생성자를 이용한 DI(의존성 주입)
+		 현재 기준으로 위에서 만들어진 Bean 사용하려면 ref를 사용한다.
+		<constructor-arg ref="mySQLDAO"></constructor-arg>		
+	</bean>
+ -->
+ 
+	<!-- setter 이용 property 의 name은 해당 클래스에 있는 setter를 가지고 있는 필드가 나온다. -->
+ 	<bean id="myService" class="com.ict.edu02.MyService">
+		<property name="dao" ref="oracleDAO" />		
+	</bean>
+ 		
+</beans>

@@ -29,6 +29,9 @@ public class MyService {
 		dao.play(); 		
 	}
 
+	public void biz2() {
+		dao.play(); 		
+	}
 	
 }
 
